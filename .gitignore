@@ -1,0 +1,5 @@
+.idea
+modules/*
+!modules/.gitkeep
+ui/dist
+ui/node_modules

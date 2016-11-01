@@ -1,0 +1,1 @@
+module.exports = { 'avid': { views: { 'clip-info': require('./views/clip-info/index.js') } } };

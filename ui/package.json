@@ -1,0 +1,46 @@
+{
+  "name": "clip-info",
+  "version": "0.0.0",
+  "description": "Clip Info",
+  "main": "dist/clip-info-example/index.js",
+  "scripts": {
+    "build-watch": "webpack --display-modules --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "avid"
+  ],
+  "author": "Avid Technology, Inc.",
+  "license": "UNLICENSED",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "avid-mcux-actions-binder": "file:../modules/avid-mcux-actions-binder",
+    "avid-mcux-active-asset": "file:../modules/avid-mcux-active-asset",
+    "avid-mcux-common-object": "file:../modules/avid-mcux-common-object",
+    "avid-mcux-settings-view": "file:../modules/avid-mcux-settings-view",
+    "avid-mcux-view": "file:../modules/avid-mcux-view",
+    "jquery": "^3.1.1",
+    "platform-ui-theme": "file:../modules/platform-ui-theme"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "avid-mcux": "file:../modules/avid-mcux",
+    "avid-mcux-mocha-docker-wrapper": "file:../modules/avid-mcux-mocha-docker-wrapper",
+    "chai": "3.x",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.23.1",
+    "fs-sync": "^1.0.3",
+    "html-loader": "^0.4.3",
+    "loader-html": "file:../modules/loader-html",
+    "minami": "1.x",
+    "mocha": "2.x",
+    "node-sass": "^3.10.1",
+    "postcss-loader": "^0.13.0",
+    "rimraf": "2.x",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}

@@ -1,0 +1,15 @@
+$theme-prefix: clipinfo;
+@import './node_modules/platform-ui-theme/themes/mcux';
+
+.clickable {
+    cursor: pointer;
+}
+
+.message {
+    display: block;
+    width: 100%;
+    height: 400px;
+    font-size: 20pt;
+    text-align: center;
+    vertical-align: middle;
+}
