@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Clip Info",
   "main": "dist/clip-info-example/index.js",
+  "repository": "github:avid-technology/ui-toolkit-clip-info-example",
   "scripts": {
     "build-watch": "webpack --display-modules --watch",
     "build": "webpack"
@@ -29,18 +30,18 @@
     "avid-mcux": "file:../modules/avid-mcux",
     "avid-mcux-mocha-docker-wrapper": "file:../modules/avid-mcux-mocha-docker-wrapper",
     "chai": "3.x",
-    "copy-webpack-plugin": "^3.0.1",
-    "css-loader": "^0.23.1",
+    "copy-webpack-plugin": "^4.0.0",
+    "css-loader": "^0.25.0",
     "fs-sync": "^1.0.3",
     "html-loader": "^0.4.3",
     "loader-html": "file:../modules/loader-html",
     "minami": "1.x",
-    "mocha": "2.x",
+    "mocha": "^3.1.2",
     "node-sass": "^3.10.1",
-    "postcss-loader": "^0.13.0",
+    "postcss-loader": "^1.1.0",
     "rimraf": "2.x",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.3"
   }
 }
