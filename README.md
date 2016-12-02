@@ -28,19 +28,17 @@ To be able to build and run this example you need to download the UI Toolkit lib
             avid-mcux
             avid-mcux-actions-binder
             ...
-        ui
-        test
+        src        
         ...
 
 ### Mediacentral UI Toolkit
-`ui` contains a basic view that gets the mobid of the current selection and 
-loads the additional data. The pane can be run using a local proxy, allowing you to run the code locally and still work with a full MediaCentral system.
+This example contains a basic view that gets the mobid of the current selection and loads the additional data. The pane can be run using a local proxy, allowing you to run the code locally and still work with a full MediaCentral system.
 
 Running:
     
     npm install
     npm run build      ("npm run build-watch" if you want to keep it running)
-    node node_modules/avid-mcux/lib/cli.js dev -b https://<your mediacentral server> -d -u http://<your mediacentral server>:8080 -i ./dist
+    node node_modules/.bin/avid-mcux dev -b https://<your mediacentral server> -i dist
 
 ## Deploying to a MediaCentral | UX server
 
