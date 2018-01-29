@@ -1,5 +1,5 @@
 # Clip Info pane
-The Clip Info pane is an example of a custom pane in MediaCentral UX using the CTMS API to display detailed data from Interplay Production. 
+The Clip Info pane is an example of a custom pane in MediaCentral UX using the CTMS API to display detailed data from Interplay Production 
 
 Once installed MediaCentral UX will have a new Pane called "Clip Info". When an Interplay Production asset is opened this pane will display two sets of data:
 
