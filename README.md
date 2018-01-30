@@ -8,7 +8,7 @@ Once installed MediaCentral Cloud UX will have a new Pane called "Clip Info". Wh
 This example was created using MediaCentral Cloud UX Toolkit:
 * [cloudux-starter-kit ](https://www.npmjs.com/package/cloudux-starter-kit)
 
-![Alt text](screenshot1.png?raw=true "Clip Info")
+![Alt text](screenshot.png?raw=true "Clip Info")
 
 ## Running the examples
 To run these examples you will need a running MediaCentral Cloud UX server running. 
