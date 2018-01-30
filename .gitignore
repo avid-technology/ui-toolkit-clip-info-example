@@ -1,5 +1,12 @@
-.idea
-modules/*
-!modules/.gitkeep
-dist
 node_modules
+package-lock.json
+.DS_Store
+dist
+build
+brass_build
+npm-debug.log
+yarn.lock
+.vs
+.vscode
+.idea
+coverage/

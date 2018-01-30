@@ -1,55 +1,26 @@
-# Clip Info pane
-The Clip Info pane is an example of a custom pane in MediaCentral UX using the CTMS API to display detailed data from Interplay Production. 
+# Clip Info App
+The Clip Info app is an example of a custom app in MediaCentral Cloud UX using the CTMS API to display detailed data from Interplay Production. 
 
-Once installed MediaCentral UX will have a new Pane called "Clip Info". When an Interplay Production asset is opened this pane will display two sets of data:
+Once installed MediaCentral Cloud UX will have a new Pane called "Clip Info". When an Interplay Production asset is opened this pane will display two sets of data:
 
-* Relatives: Other assets associated with this asset. For example sequences will show all clips that they use. All relatives are clickable links which can be followed.
-* Files: These are the media files for the selected clips. These typically are located on NEXIS.
+* Warning: This example works only with files from Interplay Production.
 
-This example makes use of 2 Toolkits:
-* Connectivity Toolkit Media Suite API: This API is used to communicate with Interplay Production and fetch the additional data.
-* MediaCentral UI Toolkit: This allows for development and deployment of custom panes from MediaCentral.
+This example was created using MediaCentral Cloud UX Toolkit:
+* [cloudux-starter-kit ](https://www.npmjs.com/package/cloudux-starter-kit)
 
-Each of these APIs is described in more detail at the [Connectivity Toolkit Website](https://www.avid.com/connectivity-partner-program/connectivity-toolkit).
-
-![Screenshot](screenshot.png)
+![Alt text](./screenshot.png?raw=true "Clip Info")
 
 ## Running the examples
-To run these examples you will need a running MediaCentral server running MediaCentral 2.8. 
-
-### Connectivity Toolkit Media Suite API
-You need to make sure the CTMS for Interplay Production is running and working before you can try these examples. This API is included with Interplay Production 3.6 and up.
+To run these examples you will need a running MediaCentral Cloud UX server running. 
 
 ### Dependencies
-To be able to build and run this example you need to download the UI Toolkit libraries from [the developer website](https://my.avid.com/products/cppsdk?toolkit=MCT). Once you've downloaded the toolkit and unzipped it, copy everything below `avid-modules` into the `modules` directory of this project. The result should look like this:
+* [cloudux-l10n ](https://www.npmjs.com/package/cloudux-l10n)
 
-    clip-info
-        modules
-            avid-mcux
-            avid-mcux-actions-binder
-            ...
-        src        
-        ...
-
-### Mediacentral UI Toolkit
-This example contains a basic view that gets the mobid of the current selection and loads the additional data. The pane can be run using a local proxy, allowing you to run the code locally and still work with a full MediaCentral system.
+### MediaCentral Cloud UX Toolkit
+This example contains a basic view that gets the info about the asset from Interplay Production.
 
 Running:
     
     npm install
-    npm run build      ("npm run build-watch" if you want to keep it running)
-    node node_modules/.bin/avid-mcux dev -b https://<your mediacentral server> -i dist
-
-## Deploying to a MediaCentral | UX server
-
-To deploy this example project to a production MediaCentral | UX server, build it by running
-`npm install && npm run build`, and then copy the `clip-info-example` folder from `dist` to the following path
-on the MediaCentral | UX server:
-
-For Media Central | UX 2.8 and newer:
-
-    /opt/avid/share/nginx/plugins
-
-For Media Central | UX 2.6 and 2.7:
-
-    /opt/avid/share/avid/media-central/htdocs/plugins
+    npm run build
+    npm start

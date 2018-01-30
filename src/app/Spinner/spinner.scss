@@ -1,0 +1,39 @@
+//Large
+.loading {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(199, 199, 199, 0.2);
+  border-top-color: #c7c7c7;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+  align-self: center;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
