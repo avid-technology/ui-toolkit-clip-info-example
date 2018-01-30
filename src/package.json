@@ -2,9 +2,9 @@
   "name": "ui-toolkit-clip-info-example",
   "description": "Clip info example",
   "main": "index.js",
-  "hostIp": "vtl",
-  "hostPort": "8443",
-  "osgiIp": "vtl",
+  "hostIp": "https://localhost",
+  "hostPort": "",
+  "osgiIp": "https://localhost",
   "osgiPort": "8480",
   "avid": {
     "format": "amd",
