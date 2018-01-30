@@ -12,6 +12,7 @@ This example was created using MediaCentral Cloud UX Toolkit:
 
 ## Running the examples
 To run these examples you will need a running MediaCentral Cloud UX server running. 
+Connection settings can be changed in [src/package.json](src/package.json)
 
 ### Dependencies
 * [cloudux-l10n ](https://www.npmjs.com/package/cloudux-l10n)
