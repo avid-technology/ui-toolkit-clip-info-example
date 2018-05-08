@@ -12,7 +12,7 @@ This example was created using MediaCentral Cloud UX Toolkit:
 
 ## Running the examples
 To run these examples you will need a running MediaCentral Cloud UX server running. 
-Connection settings can be changed in [src/package.json](src/package.json)
+Connection settings can be changed in [src/project.act](src/project.act)
 
 ### Dependencies
 * [cloudux-l10n ](https://www.npmjs.com/package/cloudux-l10n)
@@ -23,5 +23,4 @@ This example contains a basic view that gets the info about the asset from Inter
 Running:
     
     npm install
-    npm run build
     npm start
