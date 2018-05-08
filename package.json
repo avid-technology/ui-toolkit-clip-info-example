@@ -4,8 +4,7 @@
   "description": "Starter kit for UI developers in MediaCentral",
   "main": "build/index.js",
   "scripts": {
-    "start": "node scripts/server.js",
-    "setup": "node scripts/setup.js",
+    "start": "node --inspect scripts/start.js",
     "build": "webpack --config ./config/webpack.config.js --display-error-details",
     "lint-fix": "eslint --ext .jsx --ext .js --fix ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -46,21 +45,10 @@
     "sass-loader": "6.0.6",
     "spdy": "3.4.7",
     "style-loader": "0.20.1",
-    "webpack": "3.10.0"
+    "webpack": "3.10.0",
+    "webpack-merge": "4.1.2"
   },
-  "avid": {
-    "autoload": true,
-    "format": "amd"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js}",
-      "!src/__tests__/**/*.{js}"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy",
-      "\\l10n\\.(json)$": "identity-obj-proxy"
-    },
-    "testRegex": "/__tests__/.*\\.test\\.js$"
+  "devDependencies": {
+    "webpack-dev-server": "3.0.0"
   }
 }

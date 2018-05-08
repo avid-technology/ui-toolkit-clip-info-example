@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "description": "Clip Info example",
+    "appID": "1",
+    "build": "1",
+    "version": "0.01"
+  },
+  "signing": {
+    "login": "",
+    "developerID": "",
+    "organization": "",
+    "privateKeyPath": ""
+  },
+  "connection": {
+    "hostIp": "localhost",
+    "hostPort": "8443",
+    "proxyPort": "8080"
+  }
+}

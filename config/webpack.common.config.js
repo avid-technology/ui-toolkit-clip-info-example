@@ -1,15 +1,10 @@
 /**
- * Copyright 2017 by Avid Technology, Inc.
+ * Copyright 2018 by Avid Technology, Inc.
  */
-
 const paths = require('./paths');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('webpack').optimize.UglifyJsPlugin;
-const CompressionPlugin = require('compression-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack').LoaderOptionsPlugin;
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const chalk = require('chalk');
 
 module.exports = {
     entry: paths.appIndexJs,
@@ -17,6 +12,15 @@ module.exports = {
         path: paths.appBuild,
         filename: 'index.js',
         libraryTarget: 'amd',
+    },
+
+    resolve: {
+        // This allows you to set a fallback for where Webpack should look for modules.
+        // We placed these paths second because we want `node_modules` to "win"
+        // if there are any conflicts. This matches Node resolution mechanism.
+        // https://github.com/facebookincubator/create-react-app/issues/253
+        modules: [paths.appNodeModules],
+        extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     },
 
     module: {
@@ -67,11 +71,6 @@ module.exports = {
         ],
     },
     plugins: [
-        new ProgressBarPlugin({
-            format: '  build [:bar] ' + chalk.green.bold(':percent') +
-            ' (:elapsed seconds)',
-            clear: false,
-        }),
         new LoaderOptionsPlugin({
             minimize: true,
         }),
@@ -93,31 +92,6 @@ module.exports = {
                 from: 'src/images/icon.svg',
                 to: 'images/',
                 flatten: true,
-            }]),
-        new UglifyJsPlugin({
-            compress: {
-                sequences: false,
-            },
-            output: {
-                semicolons: false,
-            },
-            sourceMap: false,
-        }),
-        new CompressionPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.html$|\.css$/,
-            threshold: 10240,
-            minRatio: 0.8,
-        }),
-    ],
-    resolve: {
-        // This allows you to set a fallback for where Webpack should look for modules.
-        // We placed these paths second because we want `node_modules` to "win"
-        // if there are any conflicts. This matches Node resolution mechanism.
-        // https://github.com/facebookincubator/create-react-app/issues/253
-        modules: [paths.appNodeModules],
-        extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
-    },
-    devtool: 'eval',
+            }])
+    ]
 };

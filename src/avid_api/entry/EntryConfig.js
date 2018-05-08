@@ -30,8 +30,8 @@ export default {
     menuIcon: {
         group: 200,
         orderInGroup: 202,
-        title: appConfig.name,
-        icon: `/plugins/${appConfig.name}/images/icon.svg`,
+        title: appConfig.identity.appName,
+        icon: `/plugins/${appConfig.identity.appName}/images/icon.svg`,
         gradient: ['#ba2f82', '#cf4c85'],
     },
 };
