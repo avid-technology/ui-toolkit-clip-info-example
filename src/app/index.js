@@ -121,8 +121,8 @@ export default class ApplicationContainer {
         table.id = 'common';
         table.className = 'cux-table';
         table.appendChild(this.createTr('Created:', common.created));
-        table.appendChild(this.createTr('System ID:', common.creator));
-        table.appendChild(this.createTr('System type:', common.durationTC));
+        table.appendChild(this.createTr('Creator:', common.creator));
+        table.appendChild(this.createTr('Duration:', common.durationTC));
         table.appendChild(this.createTr('Type:', common.modified));
 
         containerLegend.appendChild(legendText);
