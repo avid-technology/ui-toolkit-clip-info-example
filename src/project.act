@@ -12,8 +12,8 @@
     "privateKeyPath": ""
   },
   "connection": {
-    "hostIp": "localhost",
-    "hostPort": "8443",
+    "hostIp": "10.42.24.55",
+    "hostPort": "",
     "proxyPort": "8080"
   }
 }

@@ -16,12 +16,7 @@
     flex: 1;
   }
 }
-.table {
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  padding: 0 5px;
-}
+
 .separator {
   height: 33px;
   background-color: #1f2127;
@@ -44,20 +39,6 @@
   font-weight: bold;
   line-height: 20px;
 }
-.tdInfo {
-  padding: 10px 0 6px 0;
-  width: 75%;
-  color: #fff;
-  border: none;
-  border-bottom: 1px solid #808499;
-}
-.tdLabel {
-  color: #808499;
-  overflow: hidden;
-  width: 25%;
-  text-align: right;
-  padding: 10px 10px 6px 20px;
-}
 .imageWrapper {
   background-color: #1f2127;
   text-align: center;
@@ -66,29 +47,6 @@
   background-color: #292a31;
   padding: 10px;
   display: flex;
-}
-.button {
-  min-width: 90px;
-  padding: 0 10px;
-  font-size: 11px;
-  background-color: #464754;
-  color: #c7c7c7;
-  border: 0 !important;
-  height: 100%;
-  cursor: pointer;
-}
-.button:hover{
-  background-color: #52545f ;
-  color: #ffffff ;
-  cursor: pointer;
-}
-.input {
-  background-color: #292a31;
-  width: 100%;
-  padding: 10px 0 6px;
-  color: #fff;
-  border: none;
-  border-bottom: 1px solid #808499;
 }
 .buttonContainer {
   width: 25%;

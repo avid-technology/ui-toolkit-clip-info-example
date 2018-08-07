@@ -6,6 +6,7 @@ import spinner from './Spinner/Spinner';
 import { getLocalization } from 'cloudux-l10n';
 import l10nData from '../l10n/lang.en.json';
 import * as styles from './styles.scss';
+import 'cloudux-bootstrap/dist/css/cloudux.min.css';
 
 export default class ApplicationContainer {
     constructor() {
@@ -43,12 +44,13 @@ export default class ApplicationContainer {
                     const buttonContainer = document.createElement('div');
                     buttonContainer.className = styles['buttonContainer'];
                     const button = document.createElement('button');
-                    button.className = styles['button'];
+                    button.className = 'cux-btn';
                     button.innerHTML = 'Demo';
                     const inputContainer = document.createElement('div');
                     inputContainer.className = styles['inputContainer'];
                     const input = document.createElement('input');
-                    input.className = styles['input'];
+                    input.style.width = '100%';
+                    input.className = 'dialog-search cux-textbox cux-textbox-value';
                     buttonContainer.appendChild(button);
                     inputContainer.appendChild(input);
                     buttonsBar.appendChild(buttonContainer);
@@ -83,16 +85,17 @@ export default class ApplicationContainer {
     }
 
     createBaseElement(base) {
-        const baseContainer = document.createElement('fieldset');
-        baseContainer.className = styles['fieldSetContainer'];
-        const containerLegend = document.createElement('legend');
-        const legendText = document.createElement('span');
+        const baseContainer = document.createElement('div');
+        baseContainer.className = 'cux-table';
+        const containerLegend = document.createElement('div');
+        const legendText = document.createElement('div');
+        legendText.className = 'cux-table-head';
         legendText.innerHTML = 'Base';
-        containerLegend.className = styles['legend'];
+        containerLegend.className = 'cux-table-heading';
 
-        const table = document.createElement('table');
+        const table = document.createElement('div');
         table.id = 'base';
-        table.className = styles['table'];
+        table.className = 'cux-table';
         table.appendChild(this.createTr('ID:', base.id));
         table.appendChild(this.createTr('System ID:', base.systemID));
         table.appendChild(this.createTr('System type:', base.systemType));
@@ -106,20 +109,23 @@ export default class ApplicationContainer {
     }
 
     createCommonElement(common) {
-        const commonContainer = document.createElement('fieldset');
-        commonContainer.className = styles['fieldSetContainer'];
-        const containerLegend = document.createElement('legend');
-        containerLegend.innerHTML = 'Common';
-        containerLegend.className = styles['legend'];
+        const commonContainer = document.createElement('div');
+        commonContainer.className = 'cux-table';
+        const containerLegend = document.createElement('div');
+        const legendText = document.createElement('div');
+        legendText.className = 'cux-table-head';
+        legendText.innerHTML = 'Common';
+        containerLegend.className = 'cux-table-heading';
 
-        const table = document.createElement('table');
+        const table = document.createElement('div');
         table.id = 'common';
-        table.className = styles['table'];
+        table.className = 'cux-table';
         table.appendChild(this.createTr('Created:', common.created));
         table.appendChild(this.createTr('System ID:', common.creator));
         table.appendChild(this.createTr('System type:', common.durationTC));
         table.appendChild(this.createTr('Type:', common.modified));
 
+        containerLegend.appendChild(legendText);
         commonContainer.appendChild(containerLegend);
         commonContainer.appendChild(table);
 
@@ -127,14 +133,15 @@ export default class ApplicationContainer {
     }
 
     createTr(name, value) {
-        const tr = document.createElement('tr');
-        const td1 = document.createElement('td');
-        const td2 = document.createElement('td');
+        const tr = document.createElement('div');
+        const td1 = document.createElement('div');
+        const td2 = document.createElement('div');
 
-        td1.className = styles['tdLabel'];
-        td2.className = styles['tdInfo'];
+        td1.className = 'cux-table-cell';
+        td2.className = 'cux-table-cell';
         td1.innerHTML = name;
         td2.innerHTML = value;
+        tr.className = 'cux-table-row';
         tr.appendChild(td1);
         tr.appendChild(td2);
 
