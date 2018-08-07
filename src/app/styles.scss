@@ -25,20 +25,6 @@
   background-color: #1f2127;
   height: 100%;
 }
-.fieldSetContainer {
-  border-width: 0px;
-  background-color: rgb(41, 42, 49);
-}
-.legend {
-  color: #c7c7c7;
-  background-color: #33353d;
-  height: 20px;
-  width: 100%;
-  padding: 0 20px;
-  font-size: 11px;
-  font-weight: bold;
-  line-height: 20px;
-}
 .imageWrapper {
   background-color: #1f2127;
   text-align: center;
@@ -49,9 +35,15 @@
   display: flex;
 }
 .buttonContainer {
-  width: 25%;
+  width: 8%;
+  display: flex;
+  justify-content: center;
 }
 .inputContainer {
-  width: 75%;
+  width: 90%;
   text-align: right;
+  padding-top: 5px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }

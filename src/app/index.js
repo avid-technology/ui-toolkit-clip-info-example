@@ -138,6 +138,8 @@ export default class ApplicationContainer {
         const td2 = document.createElement('div');
 
         td1.className = 'cux-table-cell';
+        td1.style.paddingLeft= '8px';
+        td1.style.width = '20%';
         td2.className = 'cux-table-cell';
         td1.innerHTML = name;
         td2.innerHTML = value;
