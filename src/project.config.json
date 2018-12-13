@@ -1,9 +1,8 @@
 {
   "identity": {
     "description": "Clip Info example",
-    "appID": "1",
     "build": "1",
-    "version": "0.01"
+    "version": "0.0.1"
   },
   "signing": {
     "login": "",
@@ -12,7 +11,7 @@
     "privateKeyPath": ""
   },
   "connection": {
-    "hostIp": "CloudUX Server",
+    "hostIp": "10.42.24.55",
     "hostPort": "",
     "proxyPort": "8080"
   }

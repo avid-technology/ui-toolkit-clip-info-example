@@ -3,6 +3,7 @@
  */
 
 import appConfig from '../../package.json';
+import icon from '../../images/icon.json';
 import ViewWrapper from './ViewWrapper';
 
 const ViewConfig = {
@@ -10,11 +11,13 @@ const ViewConfig = {
         menuName: appConfig.identity.appName,
         singleton: false,
         useLegacyStyles: false,
-        icon: `/plugins/${appConfig.identity.appName}/images/icon.svg`,
+        icon: icon.icon,
     },
+
     factory: () => {
         return new ViewWrapper();
     },
+    
     _proto: new ViewWrapper(),
 };
 

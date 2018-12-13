@@ -1,0 +1,50 @@
+.clip-info {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #33353d;
+  
+    &>span {
+      align-self: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  
+    &>div {
+      flex: 1;
+    }
+  }
+  
+  .separator {
+    height: 33px;
+    background-color: #1f2127;
+  }
+  .footer {
+    background-color: #1f2127;
+    height: 100%;
+  }
+  .imageWrapper {
+    background-color: #1f2127;
+    text-align: center;
+  }
+  .buttonsBar {
+    background-color: #292a31;
+    padding: 10px;
+    display: flex;
+  }
+  .buttonContainer {
+    width: 8%;
+    display: flex;
+    justify-content: center;
+  }
+  .inputContainer {
+    width: 90%;
+    text-align: right;
+    padding-top: 5px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  

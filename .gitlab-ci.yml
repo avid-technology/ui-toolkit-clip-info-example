@@ -1,0 +1,18 @@
+image: node:8
+
+stages:
+  - test
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  tags:
+    - docker
+    - node
+  script:
+  - npm install -g jest
+  - npm run lint-fix
+  - npm run test
+

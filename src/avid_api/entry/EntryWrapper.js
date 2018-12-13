@@ -3,7 +3,7 @@
  */
 import appConfig from '../../package.json';
 
-const viewName = `${appConfig.name}-view`;
+const viewName = `${appConfig.identity.appName}-view`;
 
 export default class EntryApp {
     getLayoutConfig() {

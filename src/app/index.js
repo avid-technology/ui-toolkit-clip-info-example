@@ -5,7 +5,7 @@ import getAsset from './services/data-providers';
 import spinner from './Spinner/Spinner';
 import { getLocalization } from 'cloudux-l10n';
 import l10nData from '../l10n/lang.en.json';
-import * as styles from './styles.scss';
+import * as styles from './index.scss';
 import 'cloudux-bootstrap/dist/css/cloudux.min.css';
 
 export default class ApplicationContainer {
@@ -33,55 +33,55 @@ export default class ApplicationContainer {
                 }
                 return Promise.resolve(data);
             })
-                .then((data) => {
-                    const container = document.createElement('div');
-                    const separator = document.createElement('div');
-                    separator.className = styles['separator'];
-                    const footer = document.createElement('div');
-                    footer.className = styles['footer'];
-                    const buttonsBar = document.createElement('div');
-                    buttonsBar.className = styles['buttonsBar'];
-                    const buttonContainer = document.createElement('div');
-                    buttonContainer.className = styles['buttonContainer'];
-                    const button = document.createElement('button');
-                    button.className = 'cux-btn';
-                    button.innerHTML = 'Demo';
-                    const inputContainer = document.createElement('div');
-                    inputContainer.className = styles['inputContainer'];
-                    const input = document.createElement('input');
-                    input.style.width = '100%';
-                    input.className = 'dialog-search cux-textbox cux-textbox-value';
-                    buttonContainer.appendChild(button);
-                    inputContainer.appendChild(input);
-                    buttonsBar.appendChild(buttonContainer);
-                    buttonsBar.appendChild(inputContainer);
+            .then((data) => {
+                const container = document.createElement('div');
+                const separator = document.createElement('div');
+                separator.className = styles.separator;
+                const footer = document.createElement('div');
+                footer.className = styles.footer;
+                const buttonsBar = document.createElement('div');
+                buttonsBar.className = styles.buttonsBar;
+                const buttonContainer = document.createElement('div');
+                buttonContainer.className = styles.buttonContainer;
+                const button = document.createElement('button');
+                button.className = 'cux-btn';
+                button.innerHTML = 'Demo';
+                const inputContainer = document.createElement('div');
+                inputContainer.className = styles.inputContainer;
+                const input = document.createElement('input');
+                input.style.width = '100%';
+                input.className = 'dialog-search cux-textbox cux-textbox-value';
+                buttonContainer.appendChild(button);
+                inputContainer.appendChild(input);
+                buttonsBar.appendChild(buttonContainer);
+                buttonsBar.appendChild(inputContainer);
 
-                    if (data.hasOwnProperty('thumbnail') && data.thumbnail !== undefined) {
-                        const wrapper = document.createElement('div');
-                        wrapper.className = styles['imageWrapper'];
-                        const img = document.createElement('img');
-                        img.src = data.thumbnail;
-                        wrapper.appendChild(img);
+                if (data.hasOwnProperty('thumbnail') && data.thumbnail) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = styles.imageWrapper;
+                    const img = document.createElement('img');
+                    img.src = data.thumbnail;
+                    wrapper.appendChild(img);
 
-                        container.appendChild(wrapper);
-                    }
-                    container.appendChild(this.createBaseElement(data.base));
-                    container.appendChild(separator);
-                    container.appendChild(this.createCommonElement(data.common));
-                    container.appendChild(buttonsBar);
-                    container.appendChild(footer);
-                    element.appendChild(container);
-                })
-                .catch(error => {
-                    const errorSpan = document.createElement('span');
-                    errorSpan.innerHTML = 'Error wrong asset or server unavailable';
+                    container.appendChild(wrapper);
+                }
+                container.appendChild(this.createBaseElement(data.base));
+                container.appendChild(separator);
+                container.appendChild(this.createCommonElement(data.common));
+                container.appendChild(buttonsBar);
+                container.appendChild(footer);
+                element.appendChild(container);
+            })
+            .catch(error => {
+                const errorSpan = document.createElement('span');
+                errorSpan.innerHTML = 'Error wrong asset or server unavailable';
 
-                    while (element.firstChild) {
-                        element.removeChild(element.childNodes[0]);
-                    }
-                    element.appendChild(errorSpan);
-                    console.warn(error);
-                });
+                while (element.firstChild) {
+                    element.removeChild(element.childNodes[0]);
+                }
+                element.appendChild(errorSpan);
+                console.warn(error);
+            });
     }
 
     createBaseElement(base) {
@@ -148,7 +148,7 @@ export default class ApplicationContainer {
         tr.appendChild(td2);
 
         return tr;
-    };
+    }
 
     returnElement() {
         return this.content;

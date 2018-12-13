@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 by Avid Technology, Inc.
+ * Copyright 2018 by Avid Technology, Inc.
  */
 
 import appConfig from './package.json';
@@ -7,14 +7,16 @@ import appConfig from './package.json';
 import ViewConfig from './avid_api/view/ViewConfig';
 import AppEntry from './avid_api/entry/EntryConfig';
 
+const isAdminApp = appConfig.avid.hasOwnProperty('mode') && appConfig.avid.mode[0] === 'admin';
+const providing = isAdminApp ? 'adminApps' : 'apps';
 export const avid = [
     {
-        name: `${appConfig.name}-view`,
+        name: `${appConfig.identity.appName}-view`,
         provides: ['views'],
         create: () => ViewConfig,
     },
     {
-        name: `${appConfig.name}-default-theme`,
+        name: `${appConfig.identity.appName}-default-theme`,
         provides: ['theme'],
         create: () => ({
             key: 'dark',
@@ -22,8 +24,8 @@ export const avid = [
         }),
     },
     {
-        name: appConfig.name,
-        provides: ['apps'],
+        name: appConfig.identity.appName,
+        provides: [providing],
         create: () => AppEntry,
     },
 ];

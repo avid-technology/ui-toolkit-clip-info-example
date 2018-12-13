@@ -1,6 +1,7 @@
 /**
  * Copyright 2017 by Avid Technology, Inc.
  */
+/* eslint-disable */
 
 import ApplicationContainer from '../../app/index';
 
@@ -34,19 +35,31 @@ export default class ViewWrapper {
 
     enqueueLoading(promise) {}
 
-    name(newName) {return '';}
+    name(newName) {
+        return '';
+    }
 
-    isShown() {return true;}
+    isShown() {
+        return true;
+    }
 
-    isVisible() {return true;}
+    isVisible() {
+        return true;
+    }
 
-    closeAllowed() {return true;}
+    closeAllowed() {
+        return true;
+    }
 
     destroy() {}
 
-    getMinHeight() {return 50;}
+    getMinHeight() {
+        return 50;
+    }
 
-    getMinWidth() {return 50;}
+    getMinWidth() {
+        return 50;
+    }
 
     get publicScope() {
         return {};

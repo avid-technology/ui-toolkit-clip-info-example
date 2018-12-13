@@ -3,6 +3,7 @@
  */
 
 import appConfig from '../../package.json';
+import icon from '../../images/icon.json';
 import EntryWrapper from './EntryWrapper';
 
 export default {
@@ -31,7 +32,7 @@ export default {
         group: 200,
         orderInGroup: 202,
         title: appConfig.identity.appName,
-        icon: `/plugins/${appConfig.identity.appName}/images/icon.svg`,
+        icon: icon.icon,
         gradient: ['#ba2f82', '#cf4c85'],
     },
 };

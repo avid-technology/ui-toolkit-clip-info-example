@@ -25,6 +25,9 @@ After you change hostIp in `project.act` you can run application.
 **from cli type:**
 1. `npm install`
 2. `npm start`
-3. Go to [127.0.0.1:8080](https://127.0.0.1:8080/ "127.0.0.1:8080").
+3. Go to [localhost:8080](https://localhost:8080/ "localhost:8080").
+
+**How to get onDrop asset ID?**
+Just get it from [context](http://developer.avid.com/mcux_ui_plugin/clux-api/context.html)
 
 **Check our development guide** [here](http://developer.avid.com/mcux_ui_plugin/introduction/doc/development_guide.html "Avid Developers").

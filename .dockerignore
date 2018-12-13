@@ -1,0 +1,6 @@
+node_modules
+*.zip
+.git
+*Dockerfile*
+*docker-compose*
+.gitattributes
