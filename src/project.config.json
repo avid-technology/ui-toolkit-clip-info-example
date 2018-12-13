@@ -11,7 +11,7 @@
     "privateKeyPath": ""
   },
   "connection": {
-    "hostIp": "10.42.24.55",
+    "hostIp": "<you MediaCentral ip>",
     "hostPort": "",
     "proxyPort": "8080"
   }

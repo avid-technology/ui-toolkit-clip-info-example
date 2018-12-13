@@ -14,7 +14,14 @@ const getAssetData = (systemId, mobId) => {
     // First you need to look what file systems are available
     return getServiceRoots().then(roots => {
         // For given system find method responsible for asset details
-        const assetInfo = roots.resources['aa:asset-by-id'];
+        const isPAM = roots.systems.find(system => (system.systemID === systemId && system.systemType === 'interplay-pam'));
+        let assetInfo;
+        if(isPAM) {
+            assetInfo = roots.resources['aa:asset-by-id'];
+        } else {
+            assetInfo = roots.resources['aa:asset'];
+        }
+
         let target;
 
         assetInfo.forEach(asset => {
@@ -28,13 +35,13 @@ const getAssetData = (systemId, mobId) => {
         let requestUrl = target.href;
 
         requestUrl = requestUrl.replace('{id}', mobId);
-        const info = request(GET, requestUrl);
-        // Hardcoded for Pinterplay PAM. Thumb
-        const thumbMailURL = request(GET, `/apis/avid.pam;version=2;realm=${systemId}/assets/${mobId}/thumbs`);
-        return Promise.all([info, thumbMailURL]).then((data) => {
-            const result = Object.assign({}, {'base': data[0].data.base}, {'common': data[0].data.common}, {'thumbnail': data[1].data.thumbnail});
-            return Promise.resolve(result);
+        const info = () => request(GET, requestUrl).then(assetById => {
+            return request(GET, assetById.data._links['aa:thumb'].href).then(thumbData => {
+                const result = Object.assign({}, {'base': assetById.data.base}, {'common': assetById.data.common}, {'thumbnail': thumbData.data.thumbnail});
+                return Promise.resolve(result);
+            });
         });
+        return info();
     });
 };
 
