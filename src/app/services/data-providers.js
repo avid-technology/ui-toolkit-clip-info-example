@@ -14,14 +14,7 @@ const getAssetData = (systemId, mobId) => {
     // First you need to look what file systems are available
     return getServiceRoots().then(roots => {
         // For given system find method responsible for asset details
-        const isPAM = roots.systems.find(system => (system.systemID === systemId && system.systemType === 'interplay-pam'));
-        let assetInfo;
-        if(isPAM) {
-            assetInfo = roots.resources['aa:asset-by-id'];
-        } else {
-            assetInfo = roots.resources['aa:asset'];
-        }
-
+        const assetInfo = roots.resources['aa:asset-by-id'];
         let target;
 
         assetInfo.forEach(asset => {
