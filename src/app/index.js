@@ -3,7 +3,7 @@
  */
 import getAsset from './services/data-providers';
 import spinner from './Spinner/Spinner';
-import { getLocalization } from 'cloudux-l10n';
+import { getLocalization } from './localization';
 import l10nData from '../l10n/lang.en.json';
 import * as styles from './index.scss';
 import 'cloudux-bootstrap/dist/css/cloudux.min.css';
@@ -39,23 +39,7 @@ export default class ApplicationContainer {
                 separator.className = styles.separator;
                 const footer = document.createElement('div');
                 footer.className = styles.footer;
-                const buttonsBar = document.createElement('div');
-                buttonsBar.className = styles.buttonsBar;
-                const buttonContainer = document.createElement('div');
-                buttonContainer.className = styles.buttonContainer;
-                const button = document.createElement('button');
-                button.className = 'cux-btn';
-                button.innerHTML = 'Demo';
-                const inputContainer = document.createElement('div');
-                inputContainer.className = styles.inputContainer;
-                const input = document.createElement('input');
-                input.style.width = '100%';
-                input.className = 'dialog-search cux-textbox cux-textbox-value';
-                buttonContainer.appendChild(button);
-                inputContainer.appendChild(input);
-                buttonsBar.appendChild(buttonContainer);
-                buttonsBar.appendChild(inputContainer);
-
+                
                 if (data.hasOwnProperty('thumbnail') && data.thumbnail) {
                     const wrapper = document.createElement('div');
                     wrapper.className = styles.imageWrapper;
@@ -68,7 +52,6 @@ export default class ApplicationContainer {
                 container.appendChild(this.createBaseElement(data.base));
                 container.appendChild(separator);
                 container.appendChild(this.createCommonElement(data.common));
-                container.appendChild(buttonsBar);
                 container.appendChild(footer);
                 element.appendChild(container);
             })

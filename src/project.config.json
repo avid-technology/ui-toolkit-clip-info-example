@@ -13,6 +13,6 @@
   "connection": {
     "hostIp": "<you MediaCentral ip>",
     "hostPort": "",
-    "proxyPort": "8080"
+    "proxyPort": "443"
   }
 }
