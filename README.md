@@ -18,7 +18,7 @@ Connection settings can be changed in [src/project.config.json](src/project.conf
 
 ### Running the example
 To run example you will need Avid MediaCentral | Cloud UX server. Properties
-can we changed in [src/project.config.json](src/project.config.json "project.config.json").
+can be changed in [src/project.config.json](src/project.config.json "project.config.json").
 After you change hostIp in `project.config.json` you can run application.
 
 **from cli type:**
