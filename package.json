@@ -1,6 +1,6 @@
 {
   "name": "cloudux-starter-kit",
-  "version": "2.1.13",
+  "version": "2.1.18",
   "description": "Starter kit for UI developers in CloudUX",
   "main": "build/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "base64-img": "1.0.4",
     "cloudux-bootstrap": "0.0.5",
     "request": "^2.88.0",
-    "cloudux-starter-kit": "2.1.13",
+    "cloudux-starter-kit": "2.1.18",
     "mediacentral-publish": "^0.3.2",
     "mediacentral-sign": "^0.1.1"
   },
