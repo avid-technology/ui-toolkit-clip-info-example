@@ -1,6 +1,6 @@
 {
   "name": "cloudux-starter-kit",
-  "version": "2.1.18",
+  "version": "2.2.2",
   "description": "Starter kit for UI developers in CloudUX",
   "main": "build/index.js",
   "scripts": {
@@ -24,14 +24,12 @@
     "base64-img": "1.0.4",
     "cloudux-bootstrap": "0.0.5",
     "request": "^2.88.0",
-    "cloudux-starter-kit": "2.1.18",
-    "mediacentral-publish": "^0.3.2",
-    "mediacentral-sign": "^0.1.1"
+    "cloudux-starter-kit": "2.2.2"
   },
   "devDependencies": {
     "autoprefixer": "9.6.1",
     "babel-core": "6.26.3",
-    "babel-eslint": "8.2.6",
+    "babel-eslint": "9.x",
     "babel-loader": "7.1.5",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-decorators": "6.24.1",
@@ -50,7 +48,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "file-loader": "6.2.0",
     "html-loader": "0.5.5",
-    "http-proxy-middleware": "0.18.0",
+    "http-proxy-middleware": "^2.0.6",
     "mini-css-extract-plugin": "0.4.4",
     "node-fetch": "^2.6.1",
     "postcss-loader": "3.0.0",

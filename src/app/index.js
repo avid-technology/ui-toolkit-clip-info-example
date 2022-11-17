@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 by Avid Technology, Inc.
+ * Copyright 2022 by Avid Technology, Inc.
  */
 import getAsset from './services/data-providers';
 import spinner from './Spinner/Spinner';
@@ -9,16 +9,22 @@ import * as styles from './index.scss';
 import 'cloudux-bootstrap/dist/css/cloudux.min.css';
 
 export default class ApplicationContainer {
-    constructor() {
-        this.handleDrop = this.handleDrop.bind(this);
+    render(element) {
+        const container = document.createElement('div');
+        container.id = 'clip-info';
+        container.classList.add(styles['clip-info']);
+        container.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+        container.addEventListener('drop', (event) => {
+            this.handleDrop(event, event.target);
+        });
+
         const welcomeMsg = document.createElement('span');
         welcomeMsg.innerHTML = getLocalization(l10nData)('welcome-info');
-        this.content = document.createElement('div');
-        this.content.id = 'clip-info';
-        this.content.appendChild(welcomeMsg);
-        this.content.className = styles['clip-info'];
-        this.content.ondragover = event => event.preventDefault();
-        this.content.ondrop = event => this.handleDrop(event, this.content);
+
+        element.appendChild(container);
+        container.appendChild(welcomeMsg);
     }
 
     handleDrop(event, element) {
@@ -39,7 +45,7 @@ export default class ApplicationContainer {
                 separator.className = styles.separator;
                 const footer = document.createElement('div');
                 footer.className = styles.footer;
-                
+
                 if (data.hasOwnProperty('thumbnail') && data.thumbnail) {
                     const wrapper = document.createElement('div');
                     wrapper.className = styles.imageWrapper;
@@ -55,7 +61,7 @@ export default class ApplicationContainer {
                 container.appendChild(footer);
                 element.appendChild(container);
             })
-            .catch(error => {
+            .catch((error) => {
                 const errorSpan = document.createElement('span');
                 errorSpan.innerHTML = 'Error wrong asset or server unavailable';
 
@@ -121,7 +127,7 @@ export default class ApplicationContainer {
         const td2 = document.createElement('div');
 
         td1.className = 'cux-table-cell';
-        td1.style.paddingLeft= '8px';
+        td1.style.paddingLeft = '8px';
         td1.style.width = '20%';
         td2.className = 'cux-table-cell';
         td1.innerHTML = name;
@@ -131,9 +137,5 @@ export default class ApplicationContainer {
         tr.appendChild(td2);
 
         return tr;
-    }
-
-    returnElement() {
-        return this.content;
     }
 }

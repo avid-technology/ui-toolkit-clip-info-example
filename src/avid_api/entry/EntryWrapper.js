@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 by Avid Technology, Inc.
+ * Copyright 2022 by Avid Technology, Inc.
  */
 import appConfig from '../../package.json';
 
@@ -36,10 +36,6 @@ export default class EntryApp {
         console.log('[ExamplePlugin] onHide');
     }
 
-    onUnrender() {
-        console.log('[ExamplePlugin] onUnrender');
-    }
-
     onBeforeUnrender() {
         console.log('[ExamplePlugin] onBeforeUnrender');
     }
@@ -50,6 +46,10 @@ export default class EntryApp {
 
     setContext(context) {
         console.log('[ExamplePlugin] context', context);
+    }
+
+    getTitle() {
+        return this.innerView.getTitle();
     }
 
     get publicScope() {
