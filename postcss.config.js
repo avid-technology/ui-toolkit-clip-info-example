@@ -1,7 +1,7 @@
 module.exports = {
     plugins: [
         require('autoprefixer')({
-            browsers: [
+            overrideBrowserslist: [
                 'last 5 Chrome versions',
                 'last 5 Safari versions',
                 'last 2 Firefox versions',

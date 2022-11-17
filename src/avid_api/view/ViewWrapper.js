@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 by Avid Technology, Inc.
+ * Copyright 2022 by Avid Technology, Inc.
  */
 /* eslint-disable */
 
@@ -7,22 +7,17 @@ import ApplicationContainer from '../../app/index';
 
 // Need to be bcs it is used in main App :
 export default class ViewWrapper {
-    createElement() {
+    onInit(config, { dispatch }) {
+        this.trigger = dispatch;
+        this.state = config.state;
+    }
+
+    onRender({ domElement }) {
         this.el = document.createElement('div');
         this.el.style.cssText = 'width: 100%; height: 100%;';
-        return Promise.resolve(this.el);
-    }
-
-    onInit() {
-        this.pane = new ApplicationContainer({
-            contextCallback: function (context) {
-                this.trigger('contextChange', context);
-            }.bind(this),
-        });
-    }
-
-    onRender() {
-        this.el.appendChild(this.pane.returnElement());
+        this.pane = new ApplicationContainer();
+        this.pane.render(this.el);
+        domElement.appendChild(this.el);
     }
 
     onDestroy(data) {}
@@ -61,7 +56,13 @@ export default class ViewWrapper {
         return 50;
     }
 
+    getTitle() {
+        return this.pane && this.pane.getTitle();
+    }
+
     get publicScope() {
-        return {};
+        return {
+            getTitle: this.getTitle.bind(this),
+        };
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 by Avid Technology, Inc.
+ * Copyright 2022 by Avid Technology, Inc.
  */
 
 import appConfig from './package.json';
@@ -12,7 +12,7 @@ const providing = isAdminApp ? 'adminApps' : 'apps';
 export const avid = [
     {
         name: `${appConfig.identity.appName}-view`,
-        provides: ['views'],
+        provides: ['appViews'],
         create: () => ViewConfig,
     },
     {

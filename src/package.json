@@ -5,7 +5,7 @@
   "main": "index.js",
   "avid": {
     "format": "amd",
-    "autoload": true,
+    "autoload": false,
     "alias": "your-avid-app-id",
     "secret": "your-app-secred-from-myavid-com",
     "features": {
